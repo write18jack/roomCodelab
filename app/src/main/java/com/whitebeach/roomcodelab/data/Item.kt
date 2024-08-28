@@ -18,6 +18,7 @@ package com.example.inventory.data
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 /**
  * Entity data class represents a single row in the database.
@@ -29,4 +30,4 @@ data class Item(
     val name: String,
     val price: Double,
     val quantity: Int
-)
+): Serializable

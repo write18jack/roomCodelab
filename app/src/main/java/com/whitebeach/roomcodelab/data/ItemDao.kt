@@ -39,11 +39,20 @@ interface ItemDao {
     // Specify the conflict strategy as IGNORE, when the user tries to add an
     // existing Item into the database Room ignores the conflict.
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(item: Item)
+    suspend fun insertItem(item: Item)
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertDetail(detail: Detail)
 
     @Update
-    suspend fun update(item: Item)
+    suspend fun updateItem(item: Item)
+
+    @Update
+    suspend fun updateDetail(detail: Detail)
 
     @Delete
-    suspend fun delete(item: Item)
+    suspend fun deleteItem(item: Item)
+
+    @Delete
+    suspend fun deleteDetail(detail: Detail)
 }
